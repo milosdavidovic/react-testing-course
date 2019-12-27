@@ -1,0 +1,19 @@
+{
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "prefer-template": "error",
+    "indent": ["warn", 2]
+  },
+  "ignorePatterns": [
+    "node_modules", "dist"
+  ]
+}
