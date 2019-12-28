@@ -1,11 +1,5 @@
-const firstName = "John"
-const lastName = 'Smith';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-lastName = 'Doe';
-
-
-function greeter(firstName,  lastName) {
-   console.log("Hello " + firstName + " " +  lastName)}
-
-
-greeter(firstName,  lastName);
+ReactDOM.render(<App />, document.getElementById("root"));
