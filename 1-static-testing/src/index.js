@@ -1,5 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const firstName = "John"
+const lastName = 'Smith';
+lastName = 'Doe';
+
+function greeter(firstName,  lastName) {
+   console.log("Hello " + firstName + " " +  lastName)}
+
+greeter(firstName,  lastName);
