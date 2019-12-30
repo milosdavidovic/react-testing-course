@@ -4,11 +4,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "validate": "eslint ."
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
-    "@babel/preset-env": "^7.7.7"
-  }
+    "@babel/preset-env": "^7.7.7",
+    "eslint": "^6.8.0"
+  },
+  "dependencies": {}
 }
