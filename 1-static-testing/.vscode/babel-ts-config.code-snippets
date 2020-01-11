@@ -1,0 +1,12 @@
+{
+  "babelrc": {
+    "prefix": "babelrc",
+    "body": [
+      "{",
+      "  \"presets\": [\"@babel/preset-env\", \"@babel/preset-typescript\"]",
+      "}",
+      ""
+    ],
+    "description": "babel-ts-config"
+  }
+}
