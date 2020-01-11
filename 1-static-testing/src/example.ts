@@ -7,7 +7,7 @@ interface Address {
 const addresses: Address[] = [
   {
     houseNumber: 2,
-    streetName: "Novosadskog sajma",
+    // streetName: "Novosadskog sajma",
     city: "Novi Sad"
   },
   {
@@ -17,7 +17,11 @@ const addresses: Address[] = [
   }
 ];
 
-const filterByStreetName = (input: Address[], searchTerm: string) => {
+const filterByStreetName = (
+  input: Address[],
+  searchTerm: string
+): Address[] => {
+  console.log("filtering...");
   // what if streetName is undefined?
   return input ? input.filter(a => a.streetName.indexOf(searchTerm) > -1) : [];
 };
