@@ -1,0 +1,7 @@
+{
+  "name": "2-testing-intro",
+  "version": "1.0.0",
+  "author": "Milos Davidovic",
+  "main": "src/index.js",
+  "license": "MIT"
+}
