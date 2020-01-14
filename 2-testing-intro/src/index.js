@@ -9,6 +9,16 @@ function square(a) {
 // In another file...
 // import {multiply, square} from "./math"
 
+function test(title, callback) {
+  try {
+    callback();
+    console.log(`[PASSED] ${title}`);
+  } catch (error) {
+    console.error(`[FAILED] ${title}`);
+    console.error(error.message);
+  }
+}
+
 function expect(actual) {
   return {
     toBe(expected) {
@@ -21,12 +31,18 @@ function expect(actual) {
   };
 }
 
-let expectedResult = 16;
-let actualResult = square(4);
-expect(actualResult).toBe(expectedResult);
+function testSquare() {
+  let expectedResult = 17;
+  let actualResult = square(4);
+  expect(actualResult).toBe(expectedResult);
+}
 
-expectedResult = 8;
-actualResult = multiply(2, 4);
-expect(actualResult).toBe(expectedResult);
+test("square squares number", testSquare);
 
-console.log("Tests passed!");
+function testMultiply() {
+  expectedResult = 8;
+  actualResult = multiply(2, 4);
+  expect(actualResult).toBe(expectedResult);
+}
+
+test("multiply multiplies numbers", testMultiply);
