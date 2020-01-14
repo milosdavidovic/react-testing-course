@@ -9,8 +9,14 @@ function square(a) {
 // In another file...
 // import {multiply, square} from "./math"
 
-const expectedResult = 16;
-const actualResult = square(4);
+let expectedResult = 16;
+let actualResult = square(4);
+if (expectedResult != actualResult) {
+  throw new Error(`${expectedResult} is not equal to ${actualResult}`);
+}
+
+expectedResult = 8;
+actualResult = multiply(2, 4);
 if (expectedResult != actualResult) {
   throw new Error(`${expectedResult} is not equal to ${actualResult}`);
 }
