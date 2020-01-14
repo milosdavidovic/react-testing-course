@@ -30,15 +30,19 @@ function expect(actual) {
     toBeDefined() {}
   };
 }
+// It is common to write unit tests using the AAA pattern
 
 test("square squares number", () => {
-  let expectedResult = 17;
-  let actualResult = square(4);
+  // arrange
+  const expectedResult = 17;
+  // act
+  const actualResult = square(4);
+  // assert
   expect(actualResult).toBe(expectedResult);
 });
 
 test("multiply multiplies numbers", () => {
-  expectedResult = 8;
-  actualResult = multiply(2, 4);
+  const expectedResult = 8;
+  const actualResult = multiply(2, 4);
   expect(actualResult).toBe(expectedResult);
 });
