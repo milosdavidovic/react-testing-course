@@ -31,18 +31,14 @@ function expect(actual) {
   };
 }
 
-function testSquare() {
+test("square squares number", () => {
   let expectedResult = 17;
   let actualResult = square(4);
   expect(actualResult).toBe(expectedResult);
-}
+});
 
-test("square squares number", testSquare);
-
-function testMultiply() {
+test("multiply multiplies numbers", () => {
   expectedResult = 8;
   actualResult = multiply(2, 4);
   expect(actualResult).toBe(expectedResult);
-}
-
-test("multiply multiplies numbers", testMultiply);
+});
