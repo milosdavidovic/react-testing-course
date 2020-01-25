@@ -2,6 +2,10 @@ const takeABet = require("./mocking-example");
 const coinFlipper = require("./utils/coinFlipper");
 const service = require("./utils/walletService");
 
+afterEach(() => {
+  jest.clearAllMocks();
+});
+
 test("when user wins a bet, then takeABet will return true", () => {
   // arrange (monkey patching)
   const flipACoinOriginal = coinFlipper.flipACoin;
@@ -30,7 +34,6 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   // arrange (monkey patching)
   const flipACoinOriginal = coinFlipper.flipACoin;
   coinFlipper.flipACoin = () => "heads";
-  const createTransactionOriginal = service.createTransaction;
   service.createTransaction = jest.fn();
   // act
   takeABet("1", "heads", 100);
@@ -39,7 +42,6 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   expect(service.createTransaction).toBeCalledWith("1", 200);
   //clean-up
   coinFlipper.flipACoin = flipACoinOriginal;
-  service.createTransaction = createTransactionOriginal;
 });
 
 test("when user looses a bet, then takeABet will call createTransaction with negative value of bet amount", () => {
@@ -52,7 +54,4 @@ test("when user looses a bet, then takeABet will call createTransaction with neg
   // assert
   expect(service.createTransaction).toBeCalledTimes(1);
   expect(service.createTransaction).toBeCalledWith("1", -100);
-  //clean-up
-  coinFlipper.flipACoin.mockRestore();
-  service.createTransaction.mockRestore();
 });
