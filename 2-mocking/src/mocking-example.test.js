@@ -30,6 +30,7 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   // arrange (monkey patching)
   const flipACoinOriginal = coinFlipper.flipACoin;
   coinFlipper.flipACoin = () => "heads";
+  const createTransactionOriginal = service.createTransaction;
   service.createTransaction = jest.fn();
   // act
   takeABet("1", "heads", 100);
@@ -37,4 +38,5 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   expect(service.createTransaction).toBeCalledTimes(1);
   //clean-up
   coinFlipper.flipACoin = flipACoinOriginal;
+  service.createTransaction = createTransactionOriginal;
 });
