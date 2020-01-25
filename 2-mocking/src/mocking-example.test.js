@@ -41,3 +41,18 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   coinFlipper.flipACoin = flipACoinOriginal;
   service.createTransaction = createTransactionOriginal;
 });
+
+test("when user looses a bet, then takeABet will call createTransaction with negative value of bet amount", () => {
+  // arrange
+  jest.spyOn(coinFlipper, "flipACoin");
+  jest.spyOn(service, "createTransaction");
+  coinFlipper.flipACoin.mockImplementation(() => "tails");
+  // act
+  takeABet("1", "heads", 100);
+  // assert
+  expect(service.createTransaction).toBeCalledTimes(1);
+  expect(service.createTransaction).toBeCalledWith("1", -100);
+  //clean-up
+  coinFlipper.flipACoin.mockRestore();
+  service.createTransaction.mockRestore();
+});
