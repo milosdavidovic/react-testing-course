@@ -36,6 +36,7 @@ test("when user wins a bet, then takeABet will call createTransaction with doubl
   takeABet("1", "heads", 100);
   // assert
   expect(service.createTransaction).toBeCalledTimes(1);
+  expect(service.createTransaction).toBeCalledWith("1", 200);
   //clean-up
   coinFlipper.flipACoin = flipACoinOriginal;
   service.createTransaction = createTransactionOriginal;
