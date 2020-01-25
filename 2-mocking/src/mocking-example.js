@@ -7,8 +7,9 @@ function takeABet(userId, predictedResult, betAmount) {
 
   if (hasWon) {
     sevice.createTransaction(userId, 2 * betAmount);
+  } else {
+    sevice.createTransaction(userId, betAmount);
   }
-  sevice.createTransaction(userId, betAmount);
   return hasWon;
 }
 
