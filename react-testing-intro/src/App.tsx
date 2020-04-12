@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import Header from "./components/Header/Header";
-import TaskInput from "./components/TaskInput/TaskInput";
-import TaskList from "./components/TaskList/TaskList";
+import React from "react";
+import Todo from "./components/Todo/Todo";
 
 const AppStyle = {
   container: {
@@ -10,17 +8,10 @@ const AppStyle = {
 };
 
 const App: React.FC = () => {
-  const [tasks, setTasks] = useState<string[]>([]);
-
-  const handleAddTask = (task: string) => {
-    setTasks(t => [...t, task]);
-  };
 
   return (
     <div style={AppStyle.container}>
-      <Header />
-      <TaskInput addTask={handleAddTask} />
-      <TaskList tasks={tasks} />
+      <Todo />
     </div>
   );
 };

@@ -22,8 +22,8 @@ const TaskInput: React.FC<Props> = ({ addTask }) => {
     <div style={{ display: "flex", width: "300px" }}>
       <input
         type="text"
-        aria-label="task input"
         value={value}
+        aria-label="task input"
         onChange={handleChange}
       ></input>
       <button type="button" onClick={handleAddClick}>

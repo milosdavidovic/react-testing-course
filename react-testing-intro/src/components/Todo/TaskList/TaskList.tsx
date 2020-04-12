@@ -15,7 +15,7 @@ const TaskListStyle = {
 
 const TaskList: React.FC<Props> = ({ tasks }) => {
   return (
-    <ol data-testid={TaskListTestIds.container}>
+    <ul data-testid={TaskListTestIds.container}>
       {tasks.map(task => (
         <li
           key={task}
@@ -25,7 +25,7 @@ const TaskList: React.FC<Props> = ({ tasks }) => {
           {task}
         </li>
       ))}
-    </ol>
+    </ul>
   );
 };
 

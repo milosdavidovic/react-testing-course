@@ -3,10 +3,10 @@ import React from "react";
 const Header = () => {
   return (
     <h1>
-      <span role="img" aria-label="tasks">
+      <span role="img" aria-label="todo list">
         📝
       </span>
-      TODO APP
+      TODO app
     </h1>
   );
 };

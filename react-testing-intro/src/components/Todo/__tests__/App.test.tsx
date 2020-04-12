@@ -1,18 +1,18 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import App from "../App";
-import { TaskListTestIds } from "../components/TaskList/TaskList";
+import { TaskListTestIds } from "../TaskList/TaskList";
+import Todo from "../Todo";
 
 describe("App", () => {
   it("renders the title", () => {
-    const { getByText } = render(<App />);
+    const { getByText } = render(<Todo />);
 
     const header = getByText(/todo app/i);
     expect(header).toBeInTheDocument();
   });
 
   it("renders the input form", () => {
-    const { getByLabelText, getByText } = render(<App />);
+    const { getByLabelText, getByText } = render(<Todo />);
 
     const input = getByLabelText("task input");
     expect(input).toBeInTheDocument();
@@ -21,13 +21,13 @@ describe("App", () => {
   });
 
   it("renders the task list", () => {
-    const { getByTestId } = render(<App />);
+    const { getByTestId } = render(<Todo />);
 
     getByTestId(TaskListTestIds.container);
   });
 
   it("is possible to add new task", () => {
-    const { getByLabelText, getByText, queryAllByTestId } = render(<App />);
+    const { getByLabelText, getByText, queryAllByTestId } = render(<Todo />);
     const testTask = "task1";
 
     const input = getByLabelText("task input") as HTMLInputElement;
@@ -41,7 +41,7 @@ describe("App", () => {
   });
 
   it("won't add new task if the input is empty", () => {
-    const { getByLabelText, getByText, queryAllByTestId } = render(<App />);
+    const { getByLabelText, getByText, queryAllByTestId } = render(<Todo />);
 
     const input = getByLabelText("task input") as HTMLInputElement;
     fireEvent.change(input, { target: { value: "" } });
