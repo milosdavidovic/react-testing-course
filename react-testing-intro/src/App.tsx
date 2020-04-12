@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "./components/Todo/Todo";
+import { ShoppingCart } from "./components/ShoppingCart/ShoppingCart";
 
 const AppStyle = {
   container: {
@@ -11,7 +12,7 @@ const App: React.FC = () => {
 
   return (
     <div style={AppStyle.container}>
-      <Todo />
+      <ShoppingCart />
     </div>
   );
 };
