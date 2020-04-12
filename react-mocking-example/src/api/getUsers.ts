@@ -7,12 +7,10 @@ export interface UserModel {
   email: string;
 }
 
-const getUsers = async () => {
+export const getUsers = async () => {
   const response = await axios.get<Array<UserModel>>(
     "https://jsonplaceholder.typicode.com/users"
   );
 
   return response.data || [];
 };
-
-export default getUsers;

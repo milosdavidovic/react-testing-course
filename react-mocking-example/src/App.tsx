@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import React from "react";
 import UsersList from "./components/ContactsList/ContactsList";
-import getUsers, { UserModel } from "./api/getUsers";
+import { getUsers, UserModel } from "./api/getUsers";
 
 const App = () => {
   const [users, setUsers] = React.useState<UserModel[]>([]);
